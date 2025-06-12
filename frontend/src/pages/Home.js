@@ -1,10 +1,12 @@
 // File: src/pages/Home.js
 import React from 'react';
 import './Home.css';
+import profileImage from '../assets/profile.jpg';
+import resumePdf from '../assets/KyawZinThant_Resume.pdf';
 
 const Home = () => (
   <section className="home">
-    <img className="profile" src="/assets/profile.jpg" alt="Kyaw Zin Thant" />
+    <img className="profile" src={profileImage} alt="Kyaw Zin Thant" />
     <h1>Kyaw Zin Thant</h1>
     <h2>Senior Full Stack Developer</h2>
     <blockquote>“Driven to deliver scalable, reliable, and elegant solutions.”</blockquote>
@@ -15,7 +17,7 @@ const Home = () => (
       <li>📍 Can Tho, Vietnam</li>
       <li>📧 <a href="mailto:kyawzinucsm89@gmail.com">kyawzinucsm89@gmail.com</a></li>
       <li>🔗 <a href="https://github.com/kyawzinucsm89" target="_blank" rel="noreferrer">GitHub</a> | <a href="https://linkedin.com/in/kyawzinthant" target="_blank" rel="noreferrer">LinkedIn</a></li>
-      <li>📄 <a href="/assets/KyawZinThant_Resume.pdf" download>Download Resume</a></li>
+      <li>📄 <a href={resumePdf} download>Download Resume</a></li>
     </ul>
 
     <section className="featured">
