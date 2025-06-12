@@ -1,0 +1,36 @@
+/* File: src/pages/Experience.css */
+.experience {
+  padding: 3rem 2rem;
+  background: #ffffff;
+}
+
+.experience h2 {
+  color: #0d47a1;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.job {
+  background: #f4faff;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.job h3 {
+  color: #1976d2;
+  margin-bottom: 0.3rem;
+}
+
+.duration {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.job ul {
+  padding-left: 1.2rem;
+  line-height: 1.7;
+}
