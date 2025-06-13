@@ -4,35 +4,33 @@ import './Projects.css';
 
 const Projects = () => (
   <section className="projects">
-    <h2>Highlighted Projects</h2>
+    <h2>My Projects</h2>
+    <p className="projects-intro">Here are some of the impactful apps, APIs, and systems I’ve built and deployed.</p>
 
-    <div className="project-grid">
-      <div className="project-card">
+    <div className="projects-grid">
+      <div className="project-card fade-in-up">
         <h3>Workbench Platform</h3>
-        <p>React + Spring Boot + AWS. Internal system used by 1,000+ automotive dealers.</p>
-        <ul>
-          <li>Role-based access</li>
-          <li>CI/CD pipeline with GitHub Actions</li>
-          <li>Deployed with Terraform + EC2</li>
-        </ul>
+        <p>Dealer platform for Cox Automotive. Managed CI/CD, microservices, AWS infrastructure.</p>
+        <span className="tags">React • Java • AWS • Terraform</span>
+        <a href="https://github.com/kyawzinucsm89/workbench-demo" target="_blank" rel="noreferrer">GitHub →</a>
       </div>
 
-      <div className="project-card">
+      <div className="project-card fade-in-up">
         <h3>PTE Exam Practice</h3>
-        <p>Node.js backend with AWS Transcribe for voice-based English tests.</p>
-        <ul>
-          <li>Realtime voice transcription</li>
-          <li>MongoDB storage for scores</li>
-        </ul>
+        <p>AI-powered English test backend with AWS Transcribe voice scoring and MongoDB.</p>
+        <span className="tags">Node.js • MongoDB • Express • AWS</span>
       </div>
 
-      <div className="project-card">
-        <h3>PageWerkz Writer API</h3>
-        <p>PDF publishing tool integrated with Firebase and AWS Lambda.</p>
-        <ul>
-          <li>Teacher content upload</li>
-          <li>Cloud function rendering</li>
-        </ul>
+      <div className="project-card fade-in-up">
+        <h3>PageWerkz API</h3>
+        <p>Cloud function API for publishing education content and processing Stripe payments.</p>
+        <span className="tags">Node.js • Firebase • Stripe • Serverless</span>
+      </div>
+
+      <div className="project-card fade-in-up">
+        <h3>Simple Trading Bot</h3>
+        <p>Crypto bot built with CCXT library that executes futures trades with leverage.</p>
+        <span className="tags">Node.js • Binance API • Express</span>
       </div>
     </div>
   </section>

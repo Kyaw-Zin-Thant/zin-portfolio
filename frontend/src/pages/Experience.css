@@ -1,36 +1,69 @@
 /* File: src/pages/Experience.css */
 .experience {
-  padding: 3rem 2rem;
+  padding: 4rem 2rem;
   background: #ffffff;
-}
-
-.experience h2 {
-  color: #0d47a1;
-  font-size: 2rem;
-  margin-bottom: 2rem;
   text-align: center;
 }
 
-.job {
-  background: #f4faff;
-  padding: 1.5rem;
+.experience h2 {
+  font-size: 2rem;
+  color: #0d47a1;
   margin-bottom: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-.job h3 {
+.timeline {
+  max-width: 900px;
+  margin: auto;
+  text-align: left;
+  position: relative;
+  border-left: 4px solid #1976d2;
+  padding-left: 2rem;
+}
+
+.timeline-item {
+  margin-bottom: 2rem;
+  padding-left: 0.5rem;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -1.35rem;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  background: #1976d2;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.timeline-item h3 {
   color: #1976d2;
+  font-size: 1.2rem;
   margin-bottom: 0.3rem;
 }
 
 .duration {
   font-style: italic;
-  color: #555;
-  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  display: block;
+  margin-bottom: 0.6rem;
 }
 
-.job ul {
+.timeline-item ul {
   padding-left: 1.2rem;
-  line-height: 1.7;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Fade-in animation */
+.fade-in-up {
+  animation: fadeInUp 0.8s ease both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
