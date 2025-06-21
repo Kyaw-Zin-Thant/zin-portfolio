@@ -53,7 +53,7 @@ export default function HeroSection() {
           🔗 LinkedIn
         </Link>
         <Link
-          href="/assets/KyawZinThant_Resume.pdf"
+          href="./Kyaw_Zin_Thant.pdf"
           className="bg-primary text-white px-6 py-2 rounded hover:bg-blue-800"
           download
         >
