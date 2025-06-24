@@ -3,32 +3,58 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
-const projects = [
+type Project = {
+  title: string;
+  description: string;
+  stack: string[];
+  url?: string;
+};
+
+const projects: Project[] = [
   {
-    title: 'Workbench Platform',
-    description:
-      'Dealer platform for Cox Automotive. Managed CI/CD, ECS-based microservices, Spring Boot APIs, and Terraform-based infrastructure on AWS.',
-    stack: ['React', 'Java', 'Spring Boot', 'AWS', 'Terraform'],
-    github: 'https://github.com/kyawzinucsm89/workbench-demo',
+    "title": "Workbench – Manheim (Cox Automotive)",
+    "description": "Internal platform to manage Auction Operations across Manheim, including modules like Sale Setup Tool+, Badger Web, and Title Management. Contributed to Sale Setup Tool+ features such as Lane Management, Inventory Assignment, and Search Request History.",
+    "stack": ["Java", "Spring Boot", "React", "PostgreSQL", "REST API"]
   },
   {
-    title: 'PTE Exam Practice (AI)',
-    description:
-      'A Node.js backend that integrates with AWS Transcribe to evaluate English speaking scores for PTE practice. Data is stored in MongoDB.',
-    stack: ['Node.js', 'MongoDB', 'Express', 'AWS Transcribe'],
+    "title": "AWS Infrastructure Monitoring & Alerting",
+    "description": "Implemented comprehensive monitoring using New Relic NRQL and Synthetics to track website performance and AWS resources. Integrated alerting workflows with PagerDuty for real-time incident response.",
+    "stack": ["New Relic", "PagerDuty", "NRQL", "AWS (EC2, RDS, Aurora, ELB)"]
   },
   {
-    title: 'PageWerkz Cloud API',
+    title: 'PageWerkz Writer',
     description:
       'Serverless content platform using Firebase Cloud Functions and Stripe payments to deliver K12 educational content securely.',
-    stack: ['Firebase', 'Stripe', 'Node.js', 'Serverless'],
+    stack: ['Node.js', 'AWS Lambda', 'MongoDB', 'Express', 'Angular','CloudConvert','OAuth2'],
+    url: 'https://nodma.pagewerkz.com/',
   },
   {
-    title: 'Crypto Trading Bot',
+    title: 'STEMWerkz',
     description:
-      'Built with CCXT and Binance API to execute auto-trades with adjustable leverage and stop-loss. Deployed as a background daemon.',
-    stack: ['Node.js', 'Binance API', 'CCXT'],
+      'An educational web portal, mainly focus on ease-of-access and enjoyable learning for young learners. Inquiry-based approach in lessons(interactive, games) encourages students to be inquisitive, to explore and elaborate the Science concepts learnt, broadening and deepening their knowledge.',
+    stack: ['Nodejs', 'MongoDB', 'AWS', 'Terraform'],
+    url: 'https://www.stemwerkz.org',
   },
+  {
+    title: 'ClassWerkz',
+    description:
+      'class management software developed to enable you to manage various functions with your key stakeholders. With ClassWerkz, you can track attendance, schedule classes, and communicate with stakeholders by sending notifications and gathering comments and feedback easily, all with a few clicks',
+    stack: ['Node.js', 'MongoDB', 'Express', 'Angular'],
+    url: 'https://www.classwerkz.com/',
+  },
+  {
+    title: 'PTE Alchemist Academy',
+    description:
+      'Developed the backend for an online PTE exam platform with Stripe payment integration, role-based access control, and admin question management. Implemented AWS Transcribe for Speaking tests and generated mock test result PDFs.',
+    stack: ['Node.js', 'MongoDB', 'Express', 'AWS Transcribe', 'PDFKit', 'Angular', 'Stripe'],
+    url: 'https://pte.alchemistacademy.com.au/',
+  },
+  {
+    title: 'Intelligent Fiber Line Management System',
+    description:
+      'Intelligent, Powerful System for Managing and Monitoring Nationwide Fiber-optic Communication with very friendly User Interface.',
+    stack: ['jQuery', 'Java', 'Spring', 'Leaflet', 'PostGIS']
+  }
 ];
 
 export default function Projects() {
@@ -68,14 +94,14 @@ export default function Projects() {
                 ))}
               </div>
             </div>
-            {project.github && (
+            {project.url && (
               <Link
-                href={project.github}
+                href={project.url}
                 target="_blank"
                 rel="noreferrer"
                 className="text-sm font-medium text-blue-600 dark:text-blue-300 underline"
               >
-                🔗 View on GitHub
+                Visit Project
               </Link>
             )}
           </motion.div>
