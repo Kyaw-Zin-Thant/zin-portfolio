@@ -13,10 +13,16 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+        />
+      </head>
+      <body className={`${inter.className} transition-colors`}>
         <ClientThemeProvider>
           <Navbar />
-          <main className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white transition-colors">
+          <main className="min-h-screen bg-white text-black dark:bg-gray-900 dark:text-white transition-colors">
             {children}
           </main>
         </ClientThemeProvider>
