@@ -68,14 +68,14 @@ export default function Skills() {
       </div>
 
       {/* Optional: Learning */}
-      <div className="mt-16 text-center">
+      {/* <div className="mt-16 text-center">
         <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">
           🧠 Currently Learning
         </h2>
         <p className="text-sm text-gray-600 dark:text-gray-400">
           NestJS, Astro, Serverless AI deployment with LangChain & RAG
         </p>
-      </div>
+      </div> */}
     </section>
   );
 }

@@ -48,49 +48,61 @@ export default function About() {
         <ul className="space-y-6">
           {[
             {
-              year: '2023 – Now',
-              title: 'Senior Full Stack Developer',
+              year: '2023 Apr – 2025 Jun',
+              title: 'Senior Software Engineer (Full-Time)',
               company: 'FPT Software',
               logo: './fpt.png',
               website: 'https://www.fpt-software.com/',
             },
             {
-              year: '2022 – 2022',
-              title: 'Full Stack Developer',
-              company: 'Canal+ Myanmar',
+              year: '2022 May – 2022 Nov',
+              title: 'Full Stack Developer (Full-Time)',
+              company: 'CANAL+ Myanmar FG',
               logo: './canalplus.png',
               website: 'https://www.canalplus-myanmar.com/',
             },
             {
-              year: '2021 – 2022',
-              title: 'Senior Backend Developer',
+              year: '2021 Dec – 2022 May',
+              title: 'Back End Developer (Contract)',
               company: 'Alchemist Academy',
               logo: './alchemist.png',
               website: 'https://alchemistacademy.com.au/',
             },
             {
-              year: '2018 – 2021',
-              title: 'Senior Backend Developer',
-              company: 'Amdon Consulting',
+              year: '2018 Oct – 2021 Nov',
+              title: 'Back End Developer (Full-Time)',
+              company: 'Amdon Consulting Pte Ltd',
               logo: './amdon.png',
               website: 'https://www.amdon.com/',
             },
             {
-              year: '2017 – 2018',
-              title: 'Full Stack Developer',
-              company: 'ICT Star Group Myanmar',
+              year: '2017 Oct – 2018 Sep',
+              title: 'Java Developer (Full-Time)',
+              company: 'ICT Star Group Myanmar Co., Ltd.',
               logo: './isgm.png',
               website: 'https://www.isgm2.com/',
+            },
+            {
+              year: '2017 May – 2017 Jul',
+              title: 'Developer (Internship)',
+              company: 'AWITD',
+              logo: './awitd.png',
+              website: '#',
             },
           ].map(({ year, title, company, logo, website }, index) => (
             <li key={index} className="flex items-center space-x-6">
               <img
                 src={logo}
-                alt={company}
+                alt={company + ' logo'}
                 className="w-14 h-14 object-contain rounded-md border shadow-sm bg-white p-1"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.display = 'none';
+                }}
               />
               <div className="text-sm text-gray-700 dark:text-gray-300 leading-snug">
-                <p className="font-semibold text-primary dark:text-white">{year}</p>
+                <p className="font-semibold text-primary dark:text-white">
+                  {year}
+                </p>
                 <p>
                   {title} at{' '}
                   <a
@@ -133,12 +145,13 @@ export default function About() {
       >
         <h2 className="text-xl font-semibold mb-4 text-primary dark:text-white">Fun Facts</h2>
         <ul className="text-gray-700 dark:text-gray-300 text-sm space-y-2">
-          <li>🇲🇲 Born in Myanmar, living in Vietnam 🇻🇳</li>
-          <li>💻 Built CI/CD pipelines</li>
-          <li>🎓 Bachelor's in Software Engineering from the University of Computer Studies, Mandalay, Myanmar</li>
-          <li>🏋️‍♂️ Gym 3x a week working toward 52kg goal</li>
+          <li>🇲🇲 Born in Myanmar, currently living and working in Vietnam 🇻🇳</li>
+          <li>⚙️ Integrated CI/CD pipelines to streamline backend and full-stack app deployments</li>
+          <li>🎓 Earned a Bachelor's degree in Software Engineering from the University of Computer Studies, Mandalay</li>
+          <li>🏋️‍♂️ Regular at the gym 3x a week, aiming to hit a personal goal of 52kg</li>
         </ul>
       </motion.div>
+
     </section>
   );
 }
