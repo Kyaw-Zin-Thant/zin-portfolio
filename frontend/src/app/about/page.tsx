@@ -45,21 +45,69 @@ export default function About() {
         transition={{ delay: 0.4 }}
       >
         <h2 className="text-xl font-semibold mb-4 text-primary dark:text-white">Career Timeline</h2>
-        <ul className="space-y-4 text-sm text-gray-700 dark:text-gray-300 border-l-2 border-primary pl-4">
-          <li>
-            <span className="font-bold">2023 – Now:</span> Senior Full Stack Developer at FPT Software
-          </li>
-          <li>
-            <span className="font-bold">2022 – 2022:</span> Full Stack Developer at Canal+ Myanmar
-          </li>
-          <li>
-            <span className="font-bold">2021 – 2022:</span> Backend Developer at Alchemist Academy
-          </li>
-          <li>
-            <span className="font-bold">2018 – 2021:</span> Full Stack Developer at Amdon Consulting
-          </li>
+        <ul className="space-y-6">
+          {[
+            {
+              year: '2023 – Now',
+              title: 'Senior Full Stack Developer',
+              company: 'FPT Software',
+              logo: './fpt.png',
+              website: 'https://www.fpt-software.com/',
+            },
+            {
+              year: '2022 – 2022',
+              title: 'Full Stack Developer',
+              company: 'Canal+ Myanmar',
+              logo: './canalplus.png',
+              website: 'https://www.canalplus-myanmar.com/',
+            },
+            {
+              year: '2021 – 2022',
+              title: 'Senior Backend Developer',
+              company: 'Alchemist Academy',
+              logo: './alchemist.png',
+              website: 'https://alchemistacademy.com.au/',
+            },
+            {
+              year: '2018 – 2021',
+              title: 'Senior Backend Developer',
+              company: 'Amdon Consulting',
+              logo: './amdon.png',
+              website: 'https://www.amdon.com/',
+            },
+            {
+              year: '2017 – 2018',
+              title: 'Full Stack Developer',
+              company: 'ICT Star Group Myanmar',
+              logo: './isgm.png',
+              website: 'https://www.isgm2.com/',
+            },
+          ].map(({ year, title, company, logo, website }, index) => (
+            <li key={index} className="flex items-center space-x-6">
+              <img
+                src={logo}
+                alt={company}
+                className="w-14 h-14 object-contain rounded-md border shadow-sm bg-white p-1"
+              />
+              <div className="text-sm text-gray-700 dark:text-gray-300 leading-snug">
+                <p className="font-semibold text-primary dark:text-white">{year}</p>
+                <p>
+                  {title} at{' '}
+                  <a
+                    href={website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-blue-600 hover:underline dark:text-blue-400"
+                  >
+                    {company}
+                  </a>
+                </p>
+              </div>
+            </li>
+          ))}
         </ul>
       </motion.div>
+
 
       {/* Values Section */}
       <motion.div
@@ -85,9 +133,9 @@ export default function About() {
       >
         <h2 className="text-xl font-semibold mb-4 text-primary dark:text-white">Fun Facts</h2>
         <ul className="text-gray-700 dark:text-gray-300 text-sm space-y-2">
-          <li>🇲🇲 Born in Myanmar, living in Vietnam</li>
-          <li>💻 Built chatbots, CI/CD pipelines, trading bots</li>
-          <li>🎓 Studied Computer Science & AWS Certified</li>
+          <li>🇲🇲 Born in Myanmar, living in Vietnam 🇻🇳</li>
+          <li>💻 Built CI/CD pipelines</li>
+          <li>🎓 Bachelor's in Software Engineering from the University of Computer Studies, Mandalay, Myanmar</li>
           <li>🏋️‍♂️ Gym 3x a week working toward 52kg goal</li>
         </ul>
       </motion.div>

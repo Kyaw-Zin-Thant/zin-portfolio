@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaWhatsapp, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaEnvelope, FaWhatsapp, FaLinkedin, FaGithub, FaPhone } from 'react-icons/fa';
 
 export default function Contact() {
   return (
@@ -24,6 +24,11 @@ export default function Contact() {
         <p className="flex items-center gap-2">
           <FaEnvelope />
           Email: <a href="mailto:kyawzinucsm89@gmail.com" className="underline">kyawzinucsm89@gmail.com</a>
+        </p>
+
+        <p className="flex items-center gap-2">
+          <FaPhone/>
+            Mobile: <a href="tel:+840779232312" className="underline">+84 077.923.2312</a>
         </p>
 
         <p className="flex items-center gap-2">
