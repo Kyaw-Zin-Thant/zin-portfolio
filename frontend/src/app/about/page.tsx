@@ -2,6 +2,19 @@
 
 import { motion } from 'framer-motion';
 
+const certificates = [
+  {
+    title: 'Udacity: AWS Cloud Developer',
+    image: './Cloud_Developer_Udacity.png',
+    link: 'https://www.udacity.com/certificate/e/949a42ca-bb7c-11ee-b10d-8fa99f98dd25',
+  },
+  {
+    title: 'Udacity: Data Engineering with AWS',
+    image: './DE_Udacity.png',
+    link: 'https://www.udacity.com/certificate/e/484638b8-df43-11ed-8b4d-f79403446128',
+  }
+];
+
 export default function About() {
   return (
     <section className="px-6 py-20 max-w-4xl mx-auto">
@@ -136,6 +149,60 @@ export default function About() {
           <li>📈 Always improve through learning</li>
         </ul>
       </motion.div>
+
+      {/* Certifications Preview */}
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="mt-12"
+      >
+        <h2 className="text-xl font-semibold mb-6 text-primary dark:text-white">
+          🎓 Certifications
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Static Bachelor's Degree (PDF Preview) */}
+          <motion.div
+            className="bg-white dark:bg-gray-800 rounded shadow p-4 space-y-3"
+            whileHover={{ scale: 1.02 }}
+          >
+            <h3 className="text-sm font-semibold">Bachelor's Degree</h3>
+            <iframe
+              src="./Graduation.pdf"
+              className="w-full h-72 border rounded shadow"
+              title="Bachelor Degree PDF"
+            ></iframe>
+          </motion.div>
+
+          {/* Dynamic Udacity Certs */}
+          {certificates.map((cert, index) => (
+            <motion.div
+              key={index}
+              className="bg-white dark:bg-gray-800 rounded shadow p-4 space-y-3"
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
+              <img
+                src={cert.image}
+                alt={cert.title}
+                className="w-full h-40 object-contain border rounded"
+              />
+              <h3 className="text-sm font-semibold text-gray-800 dark:text-white">
+                {cert.title}
+              </h3>
+              <a
+                href={cert.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 dark:text-blue-400 text-sm underline inline-block"
+              >
+                🔗 View Certificate
+              </a>
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
 
       {/* Fun Facts */}
       <motion.div
