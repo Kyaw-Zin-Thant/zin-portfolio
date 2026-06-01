@@ -8,38 +8,40 @@ import { certificates, education, experience, profile } from '@/data/portfolio';
 
 export default function About() {
   return (
-    <section className="mx-auto max-w-4xl px-6 py-16 sm:py-20">
+    <div className="section-pad mx-auto max-w-4xl">
       <SectionHeading
-        title="About"
-        subtitle={`${profile.title} from Myanmar, based in Vietnam. I design and ship enterprise full stack systems with cloud-native practices and modern AI-assisted workflows.`}
+        label="About"
+        title="The engineer behind the commits"
+        subtitle={`${profile.title} from Myanmar, now in Vietnam — building enterprise systems with cloud-native discipline.`}
       />
 
       <motion.div
-        className="card-surface space-y-4 p-6 text-slate-700 leading-relaxed dark:text-slate-300"
+        className="card-glass space-y-4 p-6 leading-relaxed sm:p-8"
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1 }}
       >
-        <p>
-          I have {profile.yearsExperience} years building scalable web platforms for global teams — from
-          insurtech and automotive enterprise software to EdTech APIs and fiber network operations.
+        <p style={{ color: 'var(--muted)' }}>
+          I have {profile.yearsExperience} years shipping for global teams — insurtech, automotive, EdTech,
+          and telco. Today at <strong className="text-cyan-500">CoverGo</strong>, I own full stack modules on
+          the Apeiron Access Portal with AI automation and secure identity. Before that at{' '}
+          <strong>FPT Software</strong>, I delivered Workbench for Manheim and led platform migrations (Okta,
+          New Relic, GitHub Actions, Terraform).
         </p>
-        <p>
-          My recent work at CoverGo centers on the Apeiron Access Portal: core insurance modules, secure
-          identity flows, and AI automation including meeting transcription and intelligent PDF processing.
-          Previously at FPT Software, I delivered Workbench features for Manheim while driving migrations to
-          Okta, New Relic, GitHub Actions, and Terraform-managed infrastructure.
-        </p>
-        <p>
-          I work fluently in English, collaborate well in large distributed teams, and stay hands-on with
-          Vue, React, Node.js, Java/Spring Boot, and AWS.
+        <p style={{ color: 'var(--muted)' }}>
+          Fluent in English. Comfortable in squads of 5 or 140. Hands-on with Vue, React, Node.js, Java/Spring
+          Boot, and AWS every week.
         </p>
       </motion.div>
 
-      <div className="mt-16">
-        <SectionHeading title="Experience" align="left" subtitle="Recent roles aligned with my 2026 CV." />
+      <div className="mt-20">
+        <SectionHeading
+          label="Career"
+          title="Experience"
+          subtitle="Aligned with my 2026 CV."
+          align="left"
+        />
 
-        <ol className="relative space-y-0 border-l border-slate-200 pl-8 dark:border-slate-700">
+        <ol className="relative border-l pl-8" style={{ borderColor: 'var(--card-border)' }}>
           {experience.map((job, index) => (
             <motion.li
               key={job.company}
@@ -49,31 +51,32 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
             >
-              <span className="absolute -left-[5px] mt-1.5 h-2.5 w-2.5 rounded-full bg-sky-500 ring-4 ring-slate-50 dark:ring-slate-950" />
-              <div className="card-surface -ml-2 p-5 sm:ml-0">
+              <span className="absolute -left-[5px] mt-2 h-2.5 w-2.5 rounded-full bg-cyan-400 ring-4 ring-[var(--background)]" />
+              <div className="card-glass -ml-2 p-5 sm:ml-0">
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
                   <CompanyLogo src={job.logo} company={job.company} />
                   <div className="min-w-0 flex-1">
-                    <p className="text-xs font-semibold uppercase tracking-wide text-sky-600 dark:text-sky-400">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-cyan-500">
                       {job.period}
                     </p>
-                    <h3 className="mt-1 text-lg font-semibold text-slate-900 dark:text-white">
-                      {job.role}
-                    </h3>
+                    <h3 className="font-display mt-1 text-lg font-bold">{job.role}</h3>
                     <a
                       href={job.website}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm font-medium text-slate-600 hover:text-sky-600 dark:text-slate-400 dark:hover:text-sky-400"
+                      className="text-sm font-medium opacity-70 hover:text-cyan-500"
                     >
                       {job.company}
                     </a>
-                    <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{job.summary}</p>
+                    <p className="mt-2 text-sm" style={{ color: 'var(--muted)' }}>
+                      {job.summary}
+                    </p>
                     <div className="mt-3 flex flex-wrap gap-1.5">
                       {job.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="rounded-md bg-slate-100 px-2 py-0.5 text-xs text-slate-700 dark:bg-slate-800 dark:text-slate-300"
+                          className="rounded-md px-2 py-0.5 text-xs"
+                          style={{ background: 'rgba(34, 211, 238, 0.1)', color: 'var(--accent)' }}
                         >
                           {tech}
                         </span>
@@ -88,20 +91,20 @@ export default function About() {
       </div>
 
       <motion.div
-        className="card-surface mt-12 p-6"
+        className="card-glass mt-12 p-6"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Education</h3>
-        <p className="mt-2 font-medium text-slate-800 dark:text-slate-200">{education.degree}</p>
-        <p className="text-sm text-slate-600 dark:text-slate-400">
+        <h3 className="font-display text-lg font-bold">Education</h3>
+        <p className="mt-2 font-medium">{education.degree}</p>
+        <p className="text-sm" style={{ color: 'var(--muted)' }}>
           {education.school} · {education.period} · {education.country}
         </p>
       </motion.div>
 
-      <div className="mt-16">
-        <SectionHeading title="Certifications" align="left" />
+      <div className="mt-20">
+        <SectionHeading label="Credentials" title="Certifications" align="left" />
         <div className="grid gap-6 sm:grid-cols-2">
           {certificates.map((cert) => (
             <motion.a
@@ -109,7 +112,7 @@ export default function About() {
               href={cert.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="card-surface group block overflow-hidden p-4 transition hover:border-sky-300 dark:hover:border-sky-800"
+              className="card-glass group block overflow-hidden p-4 transition hover:shadow-lg hover:shadow-cyan-500/10"
               whileHover={{ y: -2 }}
             >
               <Image
@@ -117,16 +120,17 @@ export default function About() {
                 alt={cert.title}
                 width={480}
                 height={144}
-                className="h-36 w-full rounded-lg border border-slate-100 object-contain dark:border-slate-800"
+                className="h-36 w-full rounded-lg object-contain"
+                style={{ border: '1px solid var(--card-border)' }}
               />
-              <h3 className="mt-3 font-semibold text-slate-900 group-hover:text-sky-600 dark:text-white dark:group-hover:text-sky-400">
-                {cert.title}
-              </h3>
-              <p className="text-sm text-slate-500">Udacity · {cert.year}</p>
+              <h3 className="mt-3 font-display font-semibold group-hover:text-cyan-500">{cert.title}</h3>
+              <p className="text-sm" style={{ color: 'var(--muted)' }}>
+                Udacity · {cert.year}
+              </p>
             </motion.a>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }

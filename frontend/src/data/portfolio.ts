@@ -1,40 +1,230 @@
 export const profile = {
   name: 'Kyaw Zin Thant',
+  nameShort: 'Zin',
   title: 'Senior Full Stack Engineer',
   tagline:
-    'Cloud-native full stack engineer building enterprise platforms, microservices, and AI-driven automation on AWS.',
+    'I architect and ship enterprise platforms — from insurtech portals to cloud-native microservices on AWS.',
   location: 'Can Tho, Vietnam',
+  timezone: 'GMT+7',
   email: 'kyawzinucsm89@gmail.com',
   phone: '+84 077 923 2312',
   resumePath: '/Kyaw_Zin_Thant_2026.pdf',
+  profileImage: '/profile.jpg',
   github: 'https://github.com/Kyaw-Zin-Thant',
   linkedin: 'https://www.linkedin.com/in/kyaw-zin-thant-16897615a/',
   whatsapp: 'https://wa.me/66959494506',
   zalo: 'tel:+840559401740',
   yearsExperience: '6+',
+  mailtoSubject: 'Senior Full Stack Engineer — Opportunity',
 };
 
 export const highlights = [
-  { label: 'Years experience', value: '6+' },
-  { label: 'Enterprise teams', value: '140+' },
-  { label: 'Focus', value: 'Full stack & cloud' },
-  { label: 'Delivery', value: 'CI/CD & IaC' },
+  { label: 'Years shipping', value: '6+', detail: 'Production systems' },
+  { label: 'Largest squad', value: '140+', detail: 'Enterprise insurtech' },
+  { label: 'Domains', value: '4', detail: 'Insurtech · Auto · EdTech · Telco' },
+  { label: 'Cloud focus', value: 'AWS', detail: 'Terraform · CI/CD' },
+];
+
+export const impactAreas = [
+  {
+    title: 'Insurtech at scale',
+    description:
+      'Core modules for Apeiron Access Portal — Party & Resources, AI meeting capture, and secure identity flows.',
+    icon: '🛡️',
+    accent: 'from-cyan-500/20 to-blue-600/10',
+  },
+  {
+    title: 'Automotive enterprise',
+    description:
+      'Workbench for Manheim dealer ops — microservices, Sale Setup Tool+, inventory & lane management on AWS.',
+    icon: '🚗',
+    accent: 'from-violet-500/20 to-purple-600/10',
+  },
+  {
+    title: 'Platform engineering',
+    description:
+      'SAML → Okta, Jenkins → GitHub Actions, Datadog → New Relic, plus Terraform-managed infrastructure.',
+    icon: '⚙️',
+    accent: 'from-amber-500/20 to-orange-600/10',
+  },
+  {
+    title: 'EdTech & APIs',
+    description:
+      'PageWerkz, ClassWerkz, STEMWerkz — serverless publishing, Stripe, and multi-tenant class platforms.',
+    icon: '📚',
+    accent: 'from-emerald-500/20 to-teal-600/10',
+  },
 ];
 
 export const typewriterRoles = [
-  'Senior Full Stack Engineer',
-  'Cloud & microservices on AWS',
   'Vue · React · Node.js · Spring Boot',
-  'Terraform · Docker · Kubernetes',
-  'AI-assisted development workflows',
+  'AWS microservices & Terraform',
+  'CI/CD · Docker · Kubernetes',
+  'AI-assisted full stack delivery',
 ];
 
-export const values = [
-  'Ship clean, testable code with clear ownership',
-  'Design scalable cloud-native systems on AWS',
-  'Automate delivery with CI/CD and Infrastructure as Code',
-  'Collaborate across product, platform, and compliance teams',
-  'Stay current — AI tooling, architecture, and best practices',
+export const howIWork = [
+  { title: 'Own the outcome', text: 'From API design to production deploys and observability.' },
+  { title: 'Ship incrementally', text: 'Agile delivery, code review, and clear stakeholder updates.' },
+  { title: 'Automate everything', text: 'IaC, pipelines, and repeatable environments — less toil, fewer surprises.' },
+  { title: 'Raise the bar', text: 'Mentoring juniors, documenting decisions, and improving reliability.' },
+];
+
+export type Project = {
+  title: string;
+  domain: string;
+  role: string;
+  description: string;
+  impacts: string[];
+  stack: string[];
+  featured?: boolean;
+  url?: string;
+};
+
+export const projects: Project[] = [
+  {
+    title: 'Apeiron Access Portal',
+    domain: 'Insurtech · CoverGo',
+    role: 'Senior Full Stack Engineer',
+    description:
+      'Enterprise insurance platform powering core business modules and intelligent automation for life policy workflows.',
+    impacts: [
+      'Architected Party & Resources modules with seeding and core API integration',
+      'Built AI workflows: meeting transcription auto-population & PDF case pipelines',
+      'Delivered secure login, recovery, and compliance-aware user management',
+    ],
+    stack: ['Vue', 'Node.js', 'AWS', 'Terraform', 'Docker', 'GitHub Actions'],
+    featured: true,
+  },
+  {
+    title: 'Workbench — Manheim',
+    domain: 'Automotive · Cox',
+    role: 'Senior Full Stack Developer',
+    description:
+      'Dealer operations platform supporting auction and inventory workflows for Manheim / Cox Automotive.',
+    impacts: [
+      'Full-stack features: Sale Setup Tool+, lanes, inventory assignment',
+      'Microservices on AWS (EC2, Lambda, SQS, RDS) with improved alerting',
+      'Led auth migration SAML → Okta and CI/CD Jenkins → GitHub Actions',
+    ],
+    stack: ['Java', 'Spring Boot', 'React', 'PostgreSQL', 'AWS', 'New Relic'],
+    featured: true,
+  },
+  {
+    title: 'AWS Monitoring & Alerting',
+    domain: 'Platform · Observability',
+    role: 'Engineer',
+    description: 'Proactive monitoring for web and cloud resources with incident routing.',
+    impacts: [
+      'NRQL dashboards & Synthetics for application health',
+      'PagerDuty integration for on-call incident response',
+    ],
+    stack: ['New Relic', 'PagerDuty', 'NRQL', 'AWS'],
+  },
+  {
+    title: 'PageWerkz Writer',
+    domain: 'EdTech',
+    role: 'Senior Backend Developer',
+    description: 'Serverless K12 content publishing with secure multi-channel delivery.',
+    impacts: [
+      'Lambda pipelines compressing & publishing books to S3',
+      'REST APIs for content upload, class assignment, and portals',
+    ],
+    stack: ['Node.js', 'Lambda', 'MongoDB', 'Stripe'],
+    url: 'https://nodma.pagewerkz.com/',
+  },
+  {
+    title: 'STEMWerkz',
+    domain: 'EdTech',
+    role: 'Backend Lead',
+    description: 'Interactive STEM learning with certificates and payments.',
+    impacts: ['Certificate APIs', 'Stripe integration', 'Mentored junior developers'],
+    stack: ['Node.js', 'MongoDB', 'AWS', 'Terraform'],
+    url: 'https://www.stemwerkz.org',
+  },
+  {
+    title: 'ClassWerkz',
+    domain: 'EdTech',
+    role: 'Backend Developer',
+    description: 'Class management for attendance, scheduling, and stakeholder comms.',
+    impacts: ['Auto-enrollment & notification APIs', 'Azure Pipelines CI/CD'],
+    stack: ['Node.js', 'MongoDB', 'Express', 'Angular'],
+    url: 'https://www.classwerkz.com/',
+  },
+  {
+    title: 'PTE Alchemist Academy',
+    domain: 'EdTech · Assessment',
+    role: 'Senior Backend Developer',
+    description: 'PTE exam platform with speech scoring and mock results.',
+    impacts: ['AWS Transcribe for speaking tests', 'Stripe + RBAC + PDF result generation'],
+    stack: ['Node.js', 'MongoDB', 'AWS Transcribe', 'Stripe'],
+    url: 'https://pte.alchemistacademy.com.au/',
+  },
+  {
+    title: 'Fiber Line Management',
+    domain: 'Telco · GIS',
+    role: 'Full Stack Developer',
+    description: 'Nationwide fiber monitoring with map-based operations UI.',
+    impacts: ['PostGIS data layer', 'Client demos & requirement workshops'],
+    stack: ['Java', 'Spring', 'Leaflet', 'PostGIS'],
+  },
+];
+
+export const skillProficiency = [
+  {
+    group: 'Production daily',
+    level: 'expert' as const,
+    skills: [
+      { name: 'Node.js / Express', years: '6+' },
+      { name: 'Java / Spring Boot', years: '5+' },
+      { name: 'React / Vue', years: '5+' },
+      { name: 'AWS (EC2, Lambda, S3, RDS)', years: '4+' },
+      { name: 'PostgreSQL / MongoDB', years: '6+' },
+    ],
+  },
+  {
+    group: 'Platform & delivery',
+    level: 'advanced' as const,
+    skills: [
+      { name: 'Terraform', years: '3+' },
+      { name: 'Docker & Kubernetes', years: '3+' },
+      { name: 'GitHub Actions / CI/CD', years: '4+' },
+      { name: 'New Relic / Datadog', years: '3+' },
+    ],
+  },
+  {
+    group: 'Also shipped with',
+    level: 'proficient' as const,
+    skills: [
+      { name: 'Angular / .NET', years: '2+' },
+      { name: 'Azure Pipelines', years: '3+' },
+      { name: 'Stripe / Firebase', years: '4+' },
+      { name: 'AI dev tools (Cursor, Claude)', years: '1+' },
+    ],
+  },
+];
+
+export const skillCategories = [
+  {
+    title: 'Languages & frameworks',
+    icon: '⚡',
+    items: ['Java', 'Spring Boot', 'TypeScript', 'Node.js', 'React', 'Vue', 'Angular', '.NET'],
+  },
+  {
+    title: 'Cloud & DevOps',
+    icon: '☁️',
+    items: ['AWS', 'Terraform', 'Docker', 'Kubernetes', 'GitHub Actions', 'Azure Pipelines', 'Jenkins'],
+  },
+  {
+    title: 'Data & observability',
+    icon: '🗄️',
+    items: ['PostgreSQL', 'MySQL', 'MongoDB', 'DynamoDB', 'New Relic', 'Datadog'],
+  },
+  {
+    title: 'Practices',
+    icon: '🛠️',
+    items: ['Microservices', 'REST APIs', 'Agile', 'Code review', 'IaC', 'On-call'],
+  },
 ];
 
 export const experience = [
@@ -46,7 +236,7 @@ export const experience = [
     logo: '/covergo.png',
     summary:
       'Enterprise insurance platform (140+ team). Core modules for Apeiron Access Portal, AI workflows, and secure user management.',
-    technologies: ['Vue', 'Node.js', 'AWS', 'Terraform', 'GitHub Actions', 'Docker', 'Claude Code'],
+    technologies: ['Vue', 'Node.js', 'AWS', 'Terraform', 'GitHub Actions', 'Docker'],
   },
   {
     period: 'Apr 2023 – May 2025',
@@ -56,7 +246,7 @@ export const experience = [
     logo: '/fpt.png',
     summary:
       'Workbench platform for Cox Automotive / Manheim dealer operations. Microservices, observability, and auth migration (SAML → Okta).',
-    technologies: ['Java', 'Spring Boot', 'React', 'MySQL', 'AWS', 'Terraform', 'New Relic', 'GitHub Actions'],
+    technologies: ['Java', 'Spring Boot', 'React', 'MySQL', 'AWS', 'Terraform', 'New Relic'],
   },
   {
     period: 'Jun 2022 – Dec 2022',
@@ -83,7 +273,7 @@ export const experience = [
     website: 'https://www.amdon.com/',
     logo: '/amdon.png',
     summary: 'PageWerkz, ClassWerkz, and STEMWerkz APIs — serverless publishing, payments, and Azure Pipelines.',
-    technologies: ['Node.js', 'MongoDB', 'Firebase', 'Stripe', 'Azure Pipelines', 'Lambda'],
+    technologies: ['Node.js', 'MongoDB', 'Firebase', 'Stripe', 'Lambda'],
   },
   {
     period: 'Oct 2017 – Sep 2018',
@@ -93,100 +283,6 @@ export const experience = [
     logo: '/isgm.png',
     summary: 'Copper line management and vehicle tracking — Java/Spring backend and Android client.',
     technologies: ['Java', 'Spring', 'MySQL', 'Android'],
-  },
-];
-
-export const skillCategories = [
-  {
-    title: 'Languages & frameworks',
-    icon: '⚡',
-    items: ['Java', 'Spring Boot', 'JavaScript', 'TypeScript', 'Node.js', 'React', 'Vue', 'Angular', '.NET'],
-  },
-  {
-    title: 'Cloud & DevOps',
-    icon: '☁️',
-    items: [
-      'AWS (EC2, Lambda, S3, RDS, EKS)',
-      'Terraform',
-      'Docker',
-      'Kubernetes',
-      'GitHub Actions',
-      'Azure Pipelines',
-      'Jenkins',
-      'CI/CD',
-    ],
-  },
-  {
-    title: 'Data & observability',
-    icon: '🗄️',
-    items: ['PostgreSQL', 'MySQL', 'MongoDB', 'DynamoDB', 'New Relic', 'Datadog'],
-  },
-  {
-    title: 'Practices & tooling',
-    icon: '🛠️',
-    items: ['REST APIs', 'Microservices', 'Git', 'Firebase', 'Postman', 'Jest', 'Android (Java)'],
-  },
-  {
-    title: 'AI & automation',
-    icon: '🤖',
-    items: ['AI workflow design', 'Claude Code', 'Cursor', 'PDF processing pipelines', 'AWS Transcribe'],
-  },
-];
-
-export const projects = [
-  {
-    title: 'Apeiron Access Portal — CoverGo',
-    description:
-      'Enterprise insurance platform: Party & Resources modules, AI-driven meeting transcription with auto-population, PDF processing for life policy cases, and secure login/recovery integrated with core APIs.',
-    stack: ['Vue', 'Node.js', 'AWS', 'Terraform', 'Docker', 'GitHub Actions'],
-    featured: true,
-  },
-  {
-    title: 'Workbench — Manheim (Cox Automotive)',
-    description:
-      'Dealer operations platform: Sale Setup Tool+, lane management, inventory assignment, and microservices on AWS with Okta auth and New Relic observability.',
-    stack: ['Java', 'Spring Boot', 'React', 'PostgreSQL', 'AWS', 'Terraform'],
-    featured: true,
-  },
-  {
-    title: 'AWS Infrastructure Monitoring & Alerting',
-    description:
-      'New Relic NRQL and Synthetics for website and AWS resource health; PagerDuty integration for incident response.',
-    stack: ['New Relic', 'PagerDuty', 'NRQL', 'AWS'],
-  },
-  {
-    title: 'PageWerkz Writer',
-    description:
-      'Serverless K12 content platform with Lambda publishing to S3, Stripe payments, and multi-channel delivery.',
-    stack: ['Node.js', 'Lambda', 'MongoDB', 'Express', 'Stripe'],
-    url: 'https://nodma.pagewerkz.com/',
-  },
-  {
-    title: 'STEMWerkz',
-    description:
-      'Interactive STEM learning portal with inquiry-based lessons, certificates, and Stripe payments.',
-    stack: ['Node.js', 'MongoDB', 'AWS', 'Terraform'],
-    url: 'https://www.stemwerkz.org',
-  },
-  {
-    title: 'ClassWerkz',
-    description:
-      'Class management: attendance, scheduling, notifications, and stakeholder feedback in one platform.',
-    stack: ['Node.js', 'MongoDB', 'Express', 'Angular'],
-    url: 'https://www.classwerkz.com/',
-  },
-  {
-    title: 'PTE Alchemist Academy',
-    description:
-      'PTE exam backend with Stripe, RBAC, AWS Transcribe for speaking tests, and mock result PDF generation.',
-    stack: ['Node.js', 'MongoDB', 'AWS Transcribe', 'Stripe', 'Angular'],
-    url: 'https://pte.alchemistacademy.com.au/',
-  },
-  {
-    title: 'Intelligent Fiber Line Management',
-    description:
-      'Nationwide fiber-optic monitoring with GIS-friendly UI and PostGIS-backed operations.',
-    stack: ['Java', 'Spring', 'Leaflet', 'PostGIS', 'jQuery'],
   },
 ];
 
@@ -212,16 +308,7 @@ export const education = {
   country: 'Myanmar',
 };
 
-export const techStackIcons = [
-  { name: 'Vue', devicon: 'devicon-vuejs-plain' },
-  { name: 'React', devicon: 'devicon-react-original' },
-  { name: 'Node.js', devicon: 'devicon-nodejs-plain' },
-  { name: 'Java', devicon: 'devicon-java-plain' },
-  { name: 'Spring', devicon: 'devicon-spring-plain' },
-  { name: 'TypeScript', devicon: 'devicon-typescript-plain' },
-  { name: 'AWS', devicon: 'devicon-amazonwebservices-plain-wordmark' },
-  { name: 'Docker', devicon: 'devicon-docker-plain' },
-  { name: 'Terraform', devicon: 'devicon-terraform-plain' },
-  { name: 'PostgreSQL', devicon: 'devicon-postgresql-plain' },
-  { name: 'MongoDB', devicon: 'devicon-mongodb-plain' },
+export const marqueeTech = [
+  'Vue', 'React', 'Node.js', 'Java', 'Spring Boot', 'TypeScript', 'AWS', 'Terraform',
+  'Docker', 'Kubernetes', 'PostgreSQL', 'MongoDB', 'GitHub Actions', 'New Relic',
 ];

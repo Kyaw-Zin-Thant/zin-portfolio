@@ -20,19 +20,32 @@ export default function Navbar() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => setMounted(true), []);
   useEffect(() => setOpen(false), [pathname]);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-md dark:border-slate-800 dark:bg-slate-950/80">
+    <header
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        scrolled ? 'border-b backdrop-blur-xl' : 'bg-transparent'
+      }`}
+      style={{
+        borderColor: scrolled ? 'var(--card-border)' : 'transparent',
+        background: scrolled ? 'var(--card)' : 'transparent',
+      }}
+    >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link
-          href="/"
-          className="text-lg font-bold tracking-tight text-slate-900 dark:text-white"
-        >
-          {profile.name.split(' ')[0]}
-          <span className="text-sky-600 dark:text-sky-400">.</span>
+        <Link href="/" className="font-display text-lg font-bold tracking-tight">
+          {profile.nameShort}
+          <span className="text-gradient">.</span>
+          <span className="ml-1 text-xs font-normal opacity-60">dev</span>
         </Link>
 
         <div className="hidden items-center gap-1 md:flex">
@@ -42,21 +55,21 @@ export default function Navbar() {
               href={href}
               className={`rounded-lg px-3 py-2 text-sm font-medium transition ${
                 pathname === href
-                  ? 'bg-sky-50 text-sky-700 dark:bg-sky-950/50 dark:text-sky-300'
-                  : 'nav-link'
+                  ? 'bg-cyan-500/15 text-cyan-600 dark:text-cyan-300'
+                  : 'opacity-70 hover:opacity-100'
               }`}
             >
               {label}
             </Link>
           ))}
-          <a href={profile.resumePath} download className="btn-primary ml-2 text-xs">
+          <a href={profile.resumePath} download className="btn-primary ml-2 !py-2 !text-xs">
             Resume
           </a>
           {mounted && (
             <button
               type="button"
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="ml-2 rounded-lg p-2 text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+              className="ml-2 rounded-lg p-2 opacity-70 hover:opacity-100"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? <FiSun size={18} /> : <FiMoon size={18} />}
@@ -69,41 +82,34 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="rounded-lg p-2 text-slate-600 dark:text-slate-300"
+              className="rounded-lg p-2"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? <FiSun size={18} /> : <FiMoon size={18} />}
             </button>
           )}
-          <button
-            type="button"
-            onClick={() => setOpen(!open)}
-            className="rounded-lg p-2 text-slate-700 dark:text-slate-200"
-            aria-label="Menu"
-          >
+          <button type="button" onClick={() => setOpen(!open)} className="rounded-lg p-2" aria-label="Menu">
             {open ? <FiX size={22} /> : <FiMenu size={22} />}
           </button>
         </div>
       </nav>
 
       {open && (
-        <div className="border-t border-slate-200 px-6 py-4 md:hidden dark:border-slate-800">
+        <div className="border-t px-6 py-4 md:hidden" style={{ borderColor: 'var(--card-border)' }}>
           <div className="flex flex-col gap-1">
             {links.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
                 className={`rounded-lg px-3 py-2 text-sm font-medium ${
-                  pathname === href
-                    ? 'bg-sky-50 text-sky-700 dark:bg-sky-950/50 dark:text-sky-300'
-                    : 'nav-link'
+                  pathname === href ? 'text-cyan-500' : 'opacity-80'
                 }`}
               >
                 {label}
               </Link>
             ))}
             <a href={profile.resumePath} download className="btn-primary mt-2">
-              Download resume
+              Resume
             </a>
           </div>
         </div>
