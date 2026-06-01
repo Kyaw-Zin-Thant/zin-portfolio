@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { FaEnvelope, FaGithub, FaLinkedin, FaPhone, FaWhatsapp } from 'react-icons/fa';
 import { FiDownload } from 'react-icons/fi';
 import SectionHeading from '@/components/SectionHeading';
@@ -71,7 +72,7 @@ export default function Contact() {
             className="card-surface flex items-center gap-4 px-5 py-4 transition hover:border-sky-300 dark:hover:border-sky-800"
           >
             {item.customIcon ? (
-              <img src={item.customIcon} alt="" className="h-5 w-5 shrink-0" />
+              <Image src={item.customIcon} alt="Zalo" width={20} height={20} className="shrink-0" />
             ) : item.icon ? (
               <item.icon className="shrink-0 text-lg text-sky-600 dark:text-sky-400" />
             ) : null}

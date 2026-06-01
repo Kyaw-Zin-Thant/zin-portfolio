@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import CompanyLogo from '@/components/CompanyLogo';
 import SectionHeading from '@/components/SectionHeading';
 import { certificates, education, experience, profile } from '@/data/portfolio';
@@ -111,9 +112,11 @@ export default function About() {
               className="card-surface group block overflow-hidden p-4 transition hover:border-sky-300 dark:hover:border-sky-800"
               whileHover={{ y: -2 }}
             >
-              <img
+              <Image
                 src={cert.image}
                 alt={cert.title}
+                width={480}
+                height={144}
                 className="h-36 w-full rounded-lg border border-slate-100 object-contain dark:border-slate-800"
               />
               <h3 className="mt-3 font-semibold text-slate-900 group-hover:text-sky-600 dark:text-white dark:group-hover:text-sky-400">
