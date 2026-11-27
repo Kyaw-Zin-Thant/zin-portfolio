@@ -54,6 +54,12 @@ export default function ProjectCard({ project, index = 0, featured = false }: Pr
         ))}
       </ul>
 
+      {project.caseStudyPath && (
+        <Link href={project.caseStudyPath} className="btn-ghost mt-5 self-start">
+          Read case study <FiArrowUpRight />
+        </Link>
+      )}
+
       <div className="mt-5 flex flex-wrap gap-1.5">
         {project.stack.map((tech) => (
           <span

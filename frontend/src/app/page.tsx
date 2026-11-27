@@ -9,9 +9,9 @@ export default function Home() {
   return (
     <>
       <HeroSection />
+      <FeaturedWork />
       <TechMarquee />
       <ImpactBento />
-      <FeaturedWork />
       <HowIWork />
       <CTABanner />
     </>

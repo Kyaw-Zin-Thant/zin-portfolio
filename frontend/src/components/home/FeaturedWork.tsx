@@ -10,13 +10,11 @@ export default function FeaturedWork() {
   const featured = projects.filter((p) => p.featured);
 
   return (
-    <section className="section-pad border-t" style={{ borderColor: 'var(--card-border)' }}>
+    <section id="selected-work" className="section-pad scroll-mt-24 border-t" style={{ borderColor: 'var(--card-border)' }}>
       <div className="mb-14 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
         <div className="max-w-2xl">
           <SectionHeading
-            label="Featured work"
-            title="Flagship projects"
-            subtitle="Deep ownership on products recruiters and hiring managers care about."
+            title="Selected work"
             align="left"
             className="!mb-0"
           />
@@ -26,7 +24,7 @@ export default function FeaturedWork() {
         </Link>
       </div>
 
-      <div className="-mt-8 grid gap-6 lg:grid-cols-2">
+      <div className="grid gap-6 lg:grid-cols-2">
         {featured.map((project, i) => (
           <ProjectCard key={project.title} project={project} index={i} featured />
         ))}

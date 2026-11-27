@@ -5,14 +5,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { FiArrowRight, FiDownload, FiMail } from 'react-icons/fi';
-import { Typewriter } from 'react-simple-typewriter';
-import { highlights, profile, typewriterRoles } from '@/data/portfolio';
+import { highlights, profile } from '@/data/portfolio';
 
 export default function HeroSection() {
   const mailto = `mailto:${profile.email}?subject=${encodeURIComponent(profile.mailtoSubject)}`;
 
   return (
-    <section className="section-pad pt-12 sm:pt-16">
+    <section className="section-pad !py-10 sm:!py-14">
       <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         <motion.div
           initial={{ opacity: 0, x: -24 }}
@@ -33,26 +32,14 @@ export default function HeroSection() {
           <h1 className="font-display mt-2 text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
             <span className="text-gradient">{profile.name}</span>
           </h1>
-          <p className="font-display mt-4 text-xl font-semibold sm:text-2xl">{profile.title}</p>
+          <p className="font-display mt-4 text-xl font-semibold sm:text-2xl">{profile.title} at CoverGo</p>
 
           <p className="mt-5 max-w-xl text-lg leading-relaxed" style={{ color: 'var(--muted)' }}>
             {profile.tagline}
           </p>
 
-          <p className="mt-4 h-8 text-base font-medium text-cyan-500 dark:text-cyan-400">
-            <Typewriter
-              words={typewriterRoles}
-              loop
-              cursor
-              cursorStyle="|"
-              typeSpeed={50}
-              deleteSpeed={35}
-              delaySpeed={1400}
-            />
-          </p>
-
           <div className="mt-10 flex flex-wrap gap-3">
-            <Link href="/projects" className="btn-primary">
+            <Link href="#selected-work" className="btn-primary">
               See my work <FiArrowRight />
             </Link>
             <a href={mailto} className="btn-ghost">
@@ -99,28 +86,19 @@ export default function HeroSection() {
               }}
             />
             <div className="card-glass relative overflow-hidden rounded-[1.75rem] p-2">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[1.25rem] sm:aspect-square">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[1.25rem]">
                 <Image
                   src={profile.profileImage}
                   alt={profile.name}
                   fill
                   priority
-                  className="object-cover object-top"
+                  className="object-cover object-center"
                   sizes="(max-width: 1024px) 100vw, 420px"
                 />
               </div>
-              <div
-                className="absolute bottom-6 left-6 right-6 rounded-xl p-4 backdrop-blur-md"
-                style={{ background: 'rgba(6, 10, 20, 0.75)', border: '1px solid var(--card-border)' }}
-              >
-                <p className="text-xs font-medium uppercase tracking-wider text-cyan-400">
-                  Currently
-                </p>
-                <p className="font-display mt-1 text-sm font-semibold text-white">
-                  CoverGo Insurtech
-                </p>
-                <p className="mt-0.5 text-xs text-slate-400">{profile.location}</p>
-              </div>
+              <p className="px-3 py-2 text-sm" style={{ color: 'var(--muted)' }}>
+                {profile.location}
+              </p>
             </div>
           </div>
 
