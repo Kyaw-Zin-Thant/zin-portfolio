@@ -3,7 +3,7 @@ export const profile = {
   nameShort: 'Zin',
   title: 'Senior Full Stack Engineer',
   tagline:
-    'I co-lead development of a life-insurance distribution platform. My work spans product delivery, AI document extraction, and production releases.',
+    'I build life-insurance distribution software at CoverGo, from end-to-end policy issuance to AI document extraction and production releases.',
   location: 'Ho Chi Minh City, Vietnam',
   timezone: 'GMT+7',
   email: 'kyawzinucsm89@gmail.com',
@@ -29,7 +29,7 @@ export const impactAreas = [
   {
     title: 'Insurtech at scale',
     description:
-      'Insurance distribution workflows, AI document extraction, and production releases.',
+      'End-to-end policy issuance, insurance application workflows, and AI document extraction.',
     icon: '🛡️',
     accent: 'from-cyan-500/20 to-blue-600/10',
   },
@@ -64,7 +64,7 @@ export const typewriterRoles = [
 ];
 
 export const howIWork = [
-  { title: 'Reproduce before changing', text: 'I use Claude daily in my engineering workflow. When a diagnosis is uncertain, I build a repeatable test, verify that it can detect the failure, and use the evidence to decide what to change.' },
+  { title: 'Reproduce before changing', text: 'I use Claude Code daily to explore the codebase, trace root causes, and write tests. I verify that a test can detect the failure before using its results to guide a change.' },
   { title: 'Ship incrementally', text: 'Agile delivery, code review, and clear stakeholder updates.' },
   { title: 'Automate everything', text: 'IaC, pipelines, and repeatable environments — less toil, fewer surprises.' },
   { title: 'Raise the bar', text: 'Mentoring juniors, documenting decisions, and improving reliability.' },
@@ -88,13 +88,15 @@ export const projects: Project[] = [
     domain: 'Insurtech · CoverGo',
     role: 'Senior Full Stack Engineer',
     description:
-      'I helped bootstrap and now co-lead a Vue 3, NestJS, and Temporal monorepo for insurance distribution.',
+      'I initialized and now co-lead the monorepo for a life-insurance distribution platform, spanning a Vue 3 SPA, a NestJS and Temporal worker, and a shared type library.',
     impacts: [
-      'Built form mapping and validation for AI document extraction',
-      'Delivered insurance workflows and core API integrations',
-      'Supported releases to UAT and production',
+      'Built Policy Issuance end to end, including contract validation, premium schedules, shipment tracking, generated letters, and reminders',
+      'Built document classification and splitting, a job ledger for distributed workers, and a shared OCR-to-form field mapper',
+      'Delivered carrier offer workflows, task scheduling, and in-app and email notifications',
+      'Built a case assistant with on-demand case data and added meeting transcription',
+      'Built tenant audit trails and field-level change history, and supported UAT and production releases',
     ],
-    stack: ['Vue 3', 'TypeScript', 'NestJS', 'Temporal', 'Nx', 'GitHub Actions'],
+    stack: ['Vue 3', 'TypeScript', 'Pinia', 'NestJS', 'Temporal', 'PostgreSQL', 'Redis', 'Nx', 'Playwright'],
     featured: true,
     caseStudyPath: '/projects/document-extraction',
   },
@@ -202,7 +204,7 @@ export const skillProficiency = [
       { name: 'Angular / .NET', years: '2+' },
       { name: 'Azure Pipelines', years: '3+' },
       { name: 'Stripe / Firebase', years: '4+' },
-      { name: 'AI dev tools (Cursor, Claude)', years: '1+' },
+      { name: 'AI-assisted development (Claude Code)', years: '1+' },
     ],
   },
 ];
@@ -238,7 +240,7 @@ export const experience = [
     website: 'https://covergo.com/',
     logo: '/covergo.png',
     summary:
-      'Co-lead development of a life-insurance distribution platform, including product workflows, AI document extraction, and releases to UAT and production.',
+      'Initialized and now co-lead the platform codebase. Built Policy Issuance end to end and delivered AI document extraction, case workflows, and releases to UAT and production.',
     technologies: ['Vue 3', 'TypeScript', 'NestJS', 'Temporal', 'Nx', 'GitHub Actions'],
   },
   {
