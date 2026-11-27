@@ -3,8 +3,8 @@ export const profile = {
   nameShort: 'Zin',
   title: 'Senior Full Stack Engineer',
   tagline:
-    'I architect and ship enterprise platforms — from insurtech portals to cloud-native microservices on AWS.',
-  location: 'Can Tho, Vietnam',
+    'I co-lead development of a life-insurance distribution platform. My work spans product delivery, AI document extraction, and production releases.',
+  location: 'Ho Chi Minh City, Vietnam',
   timezone: 'GMT+7',
   email: 'kyawzinucsm89@gmail.com',
   phone: '+84 077 923 2312',
@@ -20,7 +20,7 @@ export const profile = {
 
 export const highlights = [
   { label: 'Years shipping', value: '6+', detail: 'Production systems' },
-  { label: 'Largest squad', value: '140+', detail: 'Enterprise insurtech' },
+  { label: 'Workflow orchestration', value: 'Temporal', detail: 'Insurance distribution' },
   { label: 'Domains', value: '4', detail: 'Insurtech · Auto · EdTech · Telco' },
   { label: 'Cloud focus', value: 'AWS', detail: 'Terraform · CI/CD' },
 ];
@@ -29,7 +29,7 @@ export const impactAreas = [
   {
     title: 'Insurtech at scale',
     description:
-      'Core modules for Apeiron Access Portal — Party & Resources, AI meeting capture, and secure identity flows.',
+      'Insurance distribution workflows, AI document extraction, and production releases.',
     icon: '🛡️',
     accent: 'from-cyan-500/20 to-blue-600/10',
   },
@@ -64,7 +64,7 @@ export const typewriterRoles = [
 ];
 
 export const howIWork = [
-  { title: 'Own the outcome', text: 'From API design to production deploys and observability.' },
+  { title: 'Reproduce before changing', text: 'I use Claude daily in my engineering workflow. When a diagnosis is uncertain, I build a repeatable test, verify that it can detect the failure, and use the evidence to decide what to change.' },
   { title: 'Ship incrementally', text: 'Agile delivery, code review, and clear stakeholder updates.' },
   { title: 'Automate everything', text: 'IaC, pipelines, and repeatable environments — less toil, fewer surprises.' },
   { title: 'Raise the bar', text: 'Mentoring juniors, documenting decisions, and improving reliability.' },
@@ -79,22 +79,24 @@ export type Project = {
   stack: string[];
   featured?: boolean;
   url?: string;
+  caseStudyPath?: string;
 };
 
 export const projects: Project[] = [
   {
-    title: 'Apeiron Access Portal',
+    title: 'Life-insurance distribution platform',
     domain: 'Insurtech · CoverGo',
     role: 'Senior Full Stack Engineer',
     description:
-      'Enterprise insurance platform powering core business modules and intelligent automation for life policy workflows.',
+      'I helped bootstrap and now co-lead a Vue 3, NestJS, and Temporal monorepo for insurance distribution.',
     impacts: [
-      'Architected Party & Resources modules with seeding and core API integration',
-      'Built AI workflows: meeting transcription auto-population & PDF case pipelines',
-      'Delivered secure login, recovery, and compliance-aware user management',
+      'Built form mapping and validation for AI document extraction',
+      'Delivered insurance workflows and core API integrations',
+      'Supported releases to UAT and production',
     ],
-    stack: ['Vue', 'Node.js', 'AWS', 'Terraform', 'Docker', 'GitHub Actions'],
+    stack: ['Vue 3', 'TypeScript', 'NestJS', 'Temporal', 'Nx', 'GitHub Actions'],
     featured: true,
+    caseStudyPath: '/projects/document-extraction',
   },
   {
     title: 'Workbench — Manheim',
@@ -107,8 +109,9 @@ export const projects: Project[] = [
       'Microservices on AWS (EC2, Lambda, SQS, RDS) with improved alerting',
       'Led auth migration SAML → Okta and CI/CD Jenkins → GitHub Actions',
     ],
-    stack: ['Java', 'Spring Boot', 'React', 'PostgreSQL', 'AWS', 'New Relic'],
+    stack: ['Java', 'Spring Boot', 'React', 'MySQL', 'AWS', 'New Relic'],
     featured: true,
+    caseStudyPath: '/projects/workbench-observability',
   },
   {
     title: 'AWS Monitoring & Alerting',
@@ -208,7 +211,7 @@ export const skillCategories = [
   {
     title: 'Languages & frameworks',
     icon: '⚡',
-    items: ['Java', 'Spring Boot', 'TypeScript', 'Node.js', 'React', 'Vue', 'Angular', '.NET'],
+    items: ['TypeScript', 'Vue 3', 'NestJS', 'Node.js', 'React', 'Java', 'Spring Boot', 'Angular', '.NET'],
   },
   {
     title: 'Cloud & DevOps',
@@ -223,7 +226,7 @@ export const skillCategories = [
   {
     title: 'Practices',
     icon: '🛠️',
-    items: ['Microservices', 'REST APIs', 'Agile', 'Code review', 'IaC', 'On-call'],
+    items: ['Temporal workflows', 'Nx monorepos', 'AI document extraction', 'Code review', 'IaC', 'On-call'],
   },
 ];
 
@@ -235,8 +238,8 @@ export const experience = [
     website: 'https://covergo.com/',
     logo: '/covergo.png',
     summary:
-      'Enterprise insurance platform (140+ team). Core modules for Apeiron Access Portal, AI workflows, and secure user management.',
-    technologies: ['Vue', 'Node.js', 'AWS', 'Terraform', 'GitHub Actions', 'Docker'],
+      'Co-lead development of a life-insurance distribution platform, including product workflows, AI document extraction, and releases to UAT and production.',
+    technologies: ['Vue 3', 'TypeScript', 'NestJS', 'Temporal', 'Nx', 'GitHub Actions'],
   },
   {
     period: 'Apr 2023 – May 2025',

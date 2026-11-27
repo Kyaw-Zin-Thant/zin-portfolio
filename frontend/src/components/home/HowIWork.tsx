@@ -10,7 +10,6 @@ export default function HowIWork() {
       <SectionHeading
         label="Approach"
         title="How I work"
-        subtitle="Senior engineers are judged on outcomes and how they lift the team — not just syntax."
       />
 
       <div className="grid gap-4 sm:grid-cols-2">
